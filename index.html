@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+
+    <script>
+            let score = 0;
+            let correct = 0;
+            let wrong = 0;
+            let noOfQuestions = 5;
+            
+            alert("Hi 🙂, For all the questions enter option which is correct.\nFor each correct answer you get 10 marks 😍. \nFor each wrong asnwer you get -5 marks 🥲. ")
+                                                //HARD CODING 
+            // var ans = prompt("Q.1. Who is the Prime Minister of India:\n a) Narendra Modi \n b) Rahul Gandhi \n c) Draupadi Murmu \n d) None ", "Enter the correct option:");
+
+            // if(ans.toLowerCase() == "a") correctAnswer();
+            //   else wrongAnswer();
+
+            // var ans = prompt("Q.2. Who is the President of India:\n a) Narendra Modi \n b) Rahul Gandhi \n c) Droupadi Murmu \n d) None ", "Enter the correct option:");
+            // if(ans.toLowerCase() == "c") correctAnswer();
+            //   else wrongAnswer();
+
+            // var ans = prompt("Q.3. Who is the Home Minister of India:\n a) Nirmala Sitaraman \n b) Rajnath Singh \n c) Amit Shah \n d) None ", "Enter the correct option:");
+            // if(ans.toLowerCase() == "c") correctAnswer();
+            //   else wrongAnswer();
+
+            // var ans = prompt("Q.4. Who is the Finance Minister Minister of India:\n a) Narendra Modi \n b) Nirmala Sitaraman \n c) Rajnath Singh \n d) None ", "Enter the correct option:");
+            // if(ans.toLowerCase() == "b") correctAnswer();
+            //   else wrongAnswer();
+
+            // var ans = prompt("Q.5. Who is the Defence Minister of India:\n a) Narendra Modi \n b) Rajnath Singh \n c) Draupadi Murmu \n d) None ", "Enter the correct option:");
+            // if(ans.toLowerCase() == "b") correctAnswer();
+            //   else wrongAnswer();
+             
+            
+            for(let i = 0 ; i < noOfQuestions ; i++){
+                question(i);
+            }
+
+            window.alert("Your Score for Quiz = " + score + "\nNumber of Correct Answers = " + correct + "\nNumber of Wrong Answers = " + wrong );
+
+            function correctAnswer(){
+                score += 10;
+                correct ++;
+            }
+            function wrongAnswer(){
+                score -= 5;
+                wrong ++;
+            }
+            function question(a){
+
+                if (a==0) var ans = prompt("Q.1. Who is the Prime Minister of India:\n a) Narendra Modi \n b) Rahul Gandhi \n c) Draupadi Murmu \n d) None ", "Enter the correct option");
+                if (a==1) var ans =prompt("Q.2. Who is the President of India:\n a) Narendra Modi \n b) Rahul Gandhi \n c) Droupadi Murmu \n d) None ", "Enter the correct option"); 
+                if (a==2) var ans =prompt("Q.3. Who is the Home Minister of India:\n a) Nirmala Sitaraman \n b) Rajnath Singh \n c) Amit Shah \n d) None ", "Enter the correct option");
+                if (a==3) var ans =prompt("Q.4. Who is the Finance Minister Minister of India:\n a) Narendra Modi \n b) Nirmala Sitaraman \n c) Rajnath Singh \n d) None ", "Enter the correct option");
+                if (a==4) var ans =prompt("Q.5. Who is the Defence Minister of India:\n a) Narendra Modi \n b) Rajnath Singh \n c) Draupadi Murmu \n d) None ", "Enter the correct option");
+
+
+            if(ans.toLowerCase() == "a" || ans.toLowerCase() == "b" || ans.toLowerCase() == "c" || ans.toLowerCase() == "d")    
+             marksUpdate(ans,a);
+            else {
+                alert("Please enter a valid option 🥲");
+                question(a);
+            }
+            
+            }
+
+            function marksUpdate(answer,Number){
+                var correctArray = ["a","c","c","b","b"];
+                if(answer.toLowerCase() == correctArray[Number]) correctAnswer();
+                else wrongAnswer();
+
+            }
+        
+    </script>
+    
+</body>
+</html>
